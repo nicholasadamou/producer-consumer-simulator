@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/simulator.dir/simulator.c.o  -o simulator -lpthread 
