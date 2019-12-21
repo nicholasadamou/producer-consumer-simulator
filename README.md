@@ -12,7 +12,7 @@ In computing, the producer–consumer problem (also known as the bounded-buffer 
 
 The solution for the producer is to either go to sleep or discard data if the buffer is full. The next time the consumer removes an item from the buffer, it notifies the producer, who starts to fill the buffer again. In the same way, the consumer can go to sleep if it finds the buffer empty. The next time the producer puts data into the buffer, it wakes up the sleeping consumer. The solution can be reached by means of inter-process communication, typically using semaphores. An inadequate solution could result in a deadlock where both processes are waiting to be awakened. The problem can also be generalized to have multiple producers and consumers.
 
-⚠️  _**Note**_: Please see [Producer–consumer problem](https://en.wikipedia.org/wiki/Producer%E2%80%93consumer_problem) for more details and detailed description on the solution to the Producer Consumer problem.
+⚠️  _**Note**_: Please see [Producer–consumer problem](https://en.wikipedia.org/wiki/Producer%E2%80%93consumer_problem) for more details on the solution to the Producer Consumer problem.
 
 ## Compiling
 
@@ -32,7 +32,7 @@ Each additional row depicts single simulation.
 
 ```shell script
 # ./simulator <PATH_TO_CONFIG_FILE> <MAX_TEST_CASE_DURATION>
-# e.g. ./simulator "config.txt" 10
+./simulator "config.txt" 10
 ```
 
 As denoted by `<MAX_TEST_CASE_DURATION>` each simulation runs for a designated amount of time. This time is denoted by the second parameter passed to the `simulator` program. This amount of time is in terms of _seconds_. 
