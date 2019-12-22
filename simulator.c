@@ -145,7 +145,7 @@ int numberOfLinesInFile(char *path) {
     FILE *file = fopen(path, "r");
 
     if (!file) {
-        fputs("The provided <PATH_TO_CONFIG FILE> does not exist.\n\nProducerConsumerTests\nUsage: ./ProducerConsumerTests <PATH_TO_CONFIG_FILE> <MAX_TEST_CASE_DURATION>\n", stderr);
+        fputs("The provided <PATH_TO_CONFIG FILE> does not exist.\n\nSimulator\nUsage: ./simulator <PATH_TO_CONFIG_FILE> <MAX_TEST_CASE_DURATION>\n", stderr);
         return -1;
     }
 
@@ -176,7 +176,7 @@ char **readFile(char *path, int number_of_lines) {
     FILE *file = fopen(path, "r");
 
     if (!file) {
-        fputs("The provided <PATH_TO_CONFIG FILE> does not exist.\n\nProducerConsumerTests\nUsage: ./ProducerConsumerTests <PATH_TO_CONFIG_FILE> <MAX_TEST_CASE_DURATION>\n", stderr);
+        fputs("The provided <PATH_TO_CONFIG FILE> does not exist.\n\nSimulator\nUsage: ./simulator <PATH_TO_CONFIG_FILE> <MAX_TEST_CASE_DURATION>\n", stderr);
         return NULL;
     }
 
@@ -228,7 +228,6 @@ void *produce(void *argv)
         }
 
         if (test_case->terminated) {
-            pthread_cond_signal(&(test_case->consumer_flag));
             pthread_mutex_unlock(&(test_case->producer_lock));
             break;
         }
@@ -281,7 +280,6 @@ void *consume(void *argv)
         }
 
         if (test_case->terminated) {
-            pthread_cond_signal(&(test_case->producer_flag));
             pthread_mutex_unlock(&(test_case->consumer_lock));
             break;
         }
