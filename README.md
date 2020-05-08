@@ -39,7 +39,7 @@ As denoted by `<MAX_TEST_CASE_DURATION>` each simulation runs for a designated a
 
 ## License
 
-producer-consumer-simulator is © 2019, Nicholas Adamou.
+producer-consumer-simulator is © Nicholas Adamou.
 
 It is free software, and may be redistributed under the terms specified in the [LICENSE] file.
 
